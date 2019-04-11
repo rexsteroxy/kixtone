@@ -64,7 +64,9 @@
 
                 @foreach($properties->all() as $property)
                     <h1>{{$property->property_title}}</h1>
-                    <img src="{{ $property->property_image }}" alt="" width="100%">
+                    
+                    <img src="{{$property->property_image}}" alt="" width="100%">
+                    
                     <p>{{substr($property->description , 0,150)}}</p>
                     <ul class="nav nav-pills">
                         <li role="presentation">

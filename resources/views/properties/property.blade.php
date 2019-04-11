@@ -4,6 +4,16 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2"> 
+        @if(count($errors) > 0)
+                    @foreach($errors->all as $error)
+                        <div class="alert alert-danger"><li>{{$error}}</li></div>
+                    @endforeach
+                @endif
+                @if (session('response'))
+                        <div class="alert alert-success">
+                            {{ session('response') }}
+                        </div>
+                    @endif
             <div class="panel panel-default">
                 <div class="panel-heading">Property</div>
 
@@ -65,10 +75,10 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
-                            <label for="description" class="col-md-4 control-label">Address:</label>
+                            <label for="address" class="col-md-4 control-label">Address:</label>
 
                             <div class="col-md-6">
-                                <textarea id="description"  rows="2" type="text" class="form-control" 
+                                <textarea id="address"  rows="2" type="text" class="form-control" 
                                 name="address"
                                  value="{{ old('address') }}" required autofocus></textarea>
 
@@ -159,31 +169,49 @@
                                 @endif
                             </div>
                             </div>
-
-                            <div class="form-group{{ $errors->has('property_image') ? ' has-error' : '' }}">
-                            <label for="property_image" class="col-md-4 control-label">Property_Image</label>
-
-                            <div class="col-md-6">
-                                <input id="property_image" type="file" class="form-control" name="property_image"
-                                 value="{{ old('property_image') }}" required autofocus>
-
-                                @if ($errors->has('property_image'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('property_image') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                            </div>
+            
+                            <div class="input-group control-group increment" >
+          <input type="file" name="filename[]" class="form-control">
+          <div class="input-group-btn"> 
+            <button class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>Add</button>
+          </div>
+        </div>
+        <div class="clone hide">
+          <div class="control-group input-group" style="margin-top:10px">
+            <input type="file" name="filename[]" class="form-control">
+            <div class="input-group-btn"> 
+              <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
+            </div>
+          </div>
+        </div>
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" style="margin-top:10px">
                                     Post Property 
                                 </button>
                             </div>
                         </div>
                     </form>
                 </div>
+
+                <script type="text/javascript">
+
+
+                $(document).ready(function() {
+
+                $(".btn-success").click(function(){ 
+                    var html = $(".clone").html();
+                    $(".increment").after(html);
+                });
+
+                $("body").on("click",".btn-danger",function(){ 
+                    $(this).parents(".control-group").remove();
+                });
+
+                });
+
+            </script>
             </div>
         </div>
     </div>

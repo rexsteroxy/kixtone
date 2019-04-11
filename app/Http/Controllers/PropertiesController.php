@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
+//use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\DB;
@@ -13,6 +13,7 @@ use App\Like;
 use App\Dislike;
 use App\Comment;
 use App\Profile;
+use App\Image;
 use Auth;
 
 class PropertiesController extends Controller
@@ -40,9 +41,14 @@ public function addProperty(Request $request){
             "bedroom"=>'required',
             "bathroom"=>'required',
             "status"=>'required',
-            "property_image"=>"required",
+            'filename' => 'required',
+            'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
-        $property = new Property;
+            $files = $request->file('filename');
+            $picture =$files[0]->getClientOriginalName();
+            $link= URL::to('/') . '/properties/' .  $picture;
+
+            $property = new Property;
             $property->user_id = Auth::user()->id;
             $property->location_id = $request->input('location_id');
             $property->property_title = $request->input('property_title');
@@ -52,15 +58,29 @@ public function addProperty(Request $request){
             $property->status = $request->input('status');
             $property->bathroom = $request->input('bathroom');
             $property->bedroom = $request->input('bedroom');
-           
-            if(Input::hasFile('property_image')){
-                $file = Input::file('property_image');
-                $file->move(public_path(). '/properties/' , $file->getClientOriginalName());
-                $url = URL::to('/') . '/properties/' . $file->getClientOriginalName();
-            }
-
-            $property->property_image = $url;
+            $property->property_image = $link;
             $property->save();
+            
+
+
+        if($request->hasfile('filename'))
+         {
+
+            foreach($request->file('filename') as $image)
+            {
+                $name=$image->getClientOriginalName();
+                $image->move(public_path().'/properties/', $name); 
+                $url= URL::to('/') . '/properties/' . $image->getClientOriginalName(); 
+                $image = new Image;
+                $image->properties_id = $property->id;
+                $image->images = $url;
+                $image->save(); 
+            }
+            
+        }
+            
+         
+        
            return redirect('/home')->with('response','Property added  successfully');
         
      } 
@@ -81,8 +101,15 @@ public function view($property_id){
     // return $comments;
     // exit();
     $locations = Location::all();
+
+    $images = DB::table('properties')->
+         join('images','properties.id', '=' , 'images.properties_id')
+         ->select('images.*')
+         ->where(['images.properties_id' => $property_id ])
+         ->get();
+    
     return view('properties.view',compact('properties','locations','likeCounter',
-    'dislikeCounter','commentCounter','comments'));
+    'dislikeCounter','commentCounter','comments','images'));
     
 }
 public function edit($property_id){
@@ -130,6 +157,7 @@ public function editProperty(Request $request,$property_id){
 }
 public function delete($property_id){
     Property::where('id',$property_id)->delete();
+    Image::where('properties_id',$property_id)->delete();
     return redirect('/home')->with('response','Property deleted  successfully');
 
 }

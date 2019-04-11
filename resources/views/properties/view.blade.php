@@ -9,7 +9,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                <div class="col-md-4">
+                <div class="col-md-4"> 
                 <ul class="list-group">
                 @if(count($locations) > 0)
                                 @foreach($locations->all() as $location)
@@ -31,7 +31,9 @@
 
                 @foreach($properties->all() as $property)
                     <h1>{{$property->property_title}}</h1>
-                    <img src="{{ $property->property_image }}" alt="" width="100%">
+                    @foreach($images->all() as $image)
+                    <img src="{{ $image->images }}" alt="" width="100%">
+                    @endforeach
                     <p>{{$property->description }}</p>
                     <ul class="nav nav-pills">
                         <li role="presentation">
