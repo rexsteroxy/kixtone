@@ -1,89 +1,88 @@
-
-
-    <!-- Footer section -->
-    <footer class="footer-section set-bg" data-setbg="img/footer-bg.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 footer-widget">
-                    <img src="img/fmh_logo.png" alt="our site logo">
-                    <p>We are committed to easing out the activities involved in buying, selling and renting of real estate property.</p>
-                    <div class="social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
+<!--FOOER AREA-->
+<div class="footer-area dark-bg">
+        <div class="footer-area-bg"></div>
+        
+        <div class="footer-bottom-area wow fadeIn">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
+                        <div class="single-footer-widget footer-about">
+                            <h3>About Us</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <ul>
+                                <li><i class="fa fa-phone"></i> <a href="callto:+8801911854378">+8801911854378</a></li>
+                                <li><i class="fa fa-map-marker"></i> <a href="mailto:backpiper.com@gmail.com">backpiper.com@gmail.com</a></li>
+                                <li><i class="fa fa-phone"></i> Gazipur, 1704, Bangladesh. 1215.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
+                        <div class="single-footer-widget instafeed-widget">
+                            <h3>Customer Service</h3>
+                            <ul>
+                                <li><a href="#"><img src="img/instafeed/1.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="img/instafeed/2.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="img/instafeed/3.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="img/instafeed/4.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="img/instafeed/5.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="img/instafeed/6.jpg" alt=""></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 footer-widget">
-                    <div class="contact-widget">
-                        <h5 class="fw-title">CONTACT US</h5>
-                        <p><i class="fa fa-map-marker"></i>32 Wetheral Road, Owerri </p>
-                        <p><i class="fa fa-phone"></i>(+234) 814 214 6183</p>
-                        <p><i class="fa fa-envelope"></i>info@findmyhouse.com</p>
-                        <p><i class="fa fa-clock-o"></i>Mon - Sat, 08 AM - 06 PM</p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="footer-border"> </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 footer-widget">
-                    <div class="double-menu-widget">
-                        <h5 class="fw-title">POPULAR PLACES</h5>
-                        <ul>
-                            <li><a href="">Orji</a></li>
-                            <li><a href="">New Owerri</a></li>
-                            <li><a href="">Irete</a></li>
-                            <li><a href="">PH Road</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="">Wetheral</a></li>
-                            <li><a href="">Douglas</a></li>
-                            <li><a href="">Orji</a></li>
-                            <li><a href="">Akwakuma</a></li>
-                        </ul>
-
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6  footer-widget">
-                    <div class="newslatter-widget">
-                        <h5 class="fw-title">NEWSLETTER</h5>
-                        <p>Subscribe your email to get the latest news and new offer also discount</p>
-                        <form class="footer-newslatter-form" method="post">
-                            <input type="text" placeholder="Email address">
-                            <button type="submit"><i class="fa fa-send"></i></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="footer-nav">
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/listings">Property Listings</a></li>
-                        <li><a href="/places"> Places</a></li>
-                        <li><a href="/categories"> Categories</a></li>
-                        <li><a href="blog"> News</a></li>
-                        <li><a href="#">How to</a></li>
-                        <li><a href="/contact">Contact us</a></li>
-                        <li><a href="/about">About us</a></li>
-                        <li><a href="/register">Become our Agent</a></li>
-                    </ul>
-                </div>
-                <div class="copyright">
-                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script>
- <!-- <a>All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"</a> -->
- <a href="index.php">findmyhouse</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                 </div>
             </div>
         </div>
-    </footer>
-    <!-- Footer section end -->
+        <div class="footer-copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                        <div class="footer-copyright wow fadeIn">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            <p>Copyright &copy;<script>document.write(new Date().getFullYear());
+                            </script> All rights reserved | This site is made with 
+                            <i class="fa fa-heart-o" aria-hidden="true">
+                            </i> by <a href="#" target="_blank">TechLovers</a></p>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                        <div class="footer-social-bookmark text-right wow fadeIn">
+                            <ul class="social-bookmark">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--FOOER AREA END-->
 
-    <!--====== Javascripts & Jquery ======-->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+
+    <!--====== SCRIPTS JS ======-->
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+
+    <!--====== PLUGINS JS ======-->
+    <script src="js/vendor/jquery.easing.1.3.js"></script>
+    <script src="js/vendor/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/vendor/jquery.appear.js"></script>
     <script src="js/owl.carousel.min.js"></script>
-    <script src="js/masonry.pkgd.min.js"></script>
-    <script src="js/magnific-popup.min.js"></script>
+    <script src="js/stellar.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/stellarnav.min.js"></script>
+    <script src="js/contact-form.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+
+    <!--===== ACTIVE JS=====-->
     <script src="js/main.js"></script>
-</body>
-</html>

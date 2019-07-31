@@ -3,16 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Property;
+
 
 class PagesController extends Controller
 {
     
     public function getHome(){ 
 
-        $properties = Property::paginate(2);
-
-    	return view('index',compact('properties'));
+    	return view('index');
     }
-    
+    public function getTrackPage()
+    {
+        return view('track');
+    }
+    public function getServicePage()
+    {
+        return view('services');
+    }
+    public function getAboutPage()
+    {
+        return view('about');
+    }
+    public function getContactPage()
+    {
+        return view('contact');
+    }
 }

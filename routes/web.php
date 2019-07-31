@@ -12,35 +12,17 @@
 */
 //Routes for the getting the whole web pages on view root folder
 Route::get('/', 'PagesController@getHome');
+Route::get('/track', 'PagesController@getTrackPage');
+Route::get('/service', 'PagesController@getServicePage');
+Route::get('/about', 'PagesController@getAboutPage');
+Route::get('/contact', 'PagesController@getContactPage');
 
 
 //Routes for All Registrations and login
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home'); 
+Route::get('/specialAdmin', 'HomeController@index')->name('home'); 
 
-//Routs for Properties
-Route::get('/property','PropertiesController@post');
-Route::post('/addproperty','PropertiesController@addProperty');
-Route::get('/view/{id}','PropertiesController@view');
-Route::get('/edit/{id}','PropertiesController@edit');
-Route::post('/editproperty/{id}','PropertiesController@editProperty');
-Route::get('/delete/{id}','PropertiesController@delete');
-Route::get('/location/{id}','PropertiesController@location');
-Route::get('/like/{id}','PropertiesController@like');
-Route::get('/dislike/{id}','PropertiesController@dislike');
-Route::post('/addcomment/{id}','PropertiesController@addComment');
-Route::post('/search','PropertiesController@search');
-
-
-
-//Routes for Profile
-Route::get('/profile','ProfilesController@profile');
-Route::post('/addprofile', 'ProfilesController@addProfile');
-
-
-//Routes for the locations.
-Route::get('/location','LocationsController@location');
-Route::post('/addlocation','LocationsController@addLocation');
+//Routs for the Track Functionalities
 
 
 
