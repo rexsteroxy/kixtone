@@ -20,9 +20,10 @@ Route::get('/contact', 'PagesController@getContactPage');
 
 //Routes for All Registrations and login
 Auth::routes();
-Route::get('/specialAdmin', 'HomeController@index')->name('home'); 
+Route::get('/home', 'HomeController@index')->name('home'); 
 
-//Routs for the Track Functionalities
+//Routs for the Parcel Functionalities
+Route::get('/parcel','ParcelController@get');
 
 
 

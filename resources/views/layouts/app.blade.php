@@ -30,7 +30,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        KizTone
+                        ShipGold
                     </a>
                 </div>
 
@@ -38,10 +38,6 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         <li><a href="{{url('/')}}">Home</a></li>
-                        @if(!empty($profile))
-                        <li><a href="{{url('/property')}}">Upload Music</a></li>
-                        
-                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -51,22 +47,24 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
-                        <li><a href="{{url('/profile')}}">Upload Profile Image</a></li>
+                        <li><a href="{{url('/parcel')}}">Upload Parcel</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                                    {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}
+                                    {{ Auth::user()->email }} 
                                      <span class="caret"></span>
                                 </a>
+                                
 
                                 <ul class="dropdown-menu">
                                     <li>
-                                    <li><a href="{{url('/location')}}">Add Location</a></li>
+                                    <li><a href=""></a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>
+
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
