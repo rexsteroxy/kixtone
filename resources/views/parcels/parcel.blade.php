@@ -22,14 +22,33 @@
                  enctype = "multipart/form-data" >
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('firstName') ? ' has-error' : '' }}">
+                        
+                        <div class="form-group{{ $errors->has('tracking_id') ? ' has-error' : '' }}">
+                            <label for="firstName" class="col-md-4 control-label">Tracking ID:</label>
+
+                            <div class="col-md-6">
+                                <input id="tracking_id" type="text" class="form-control" name="tracking_id"
+                                 value="{{ old('tracking_id') }}" required autofocus>
+
+                                @if ($errors->has('tracking_id'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('tracking_id') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="form-group{{ $errors->has('reciever_name') ? ' has-error' : '' }}">
                             <label for="firstName" class="col-md-4 control-label">Reciever Name</label>
 
                             <div class="col-md-6">
-                                <input id="reciever" type="text" class="form-control" name="reciever_name"
-                                 value="{{ old('reciever') }}" required autofocus>
+                                <input id="reciever_name" type="text" class="form-control" name="reciever_name"
+                                 value="{{ old('reciever_name') }}" required autofocus>
 
-                                @if ($errors->has('property_title'))
+                                @if ($errors->has('reciever_name'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('reciever_name') }}</strong>
                                     </span>
@@ -42,7 +61,8 @@
                             <label for="price" class="col-md-4 control-label">Reciever Phone Number</label>
 
                             <div class="col-md-6">
-                                <input id="reciever_phonenumber" type="number" class="form-control" name="reciever_phonenumber"
+                                <input id="reciever_phonenumber" type="number" class="form-control" 
+                                name="reciever_phonenumber"
                                  value="{{ old('reciever_phonenumber') }}" required autofocus>
 
                                 @if ($errors->has('reciever_phonenumber'))
@@ -53,118 +73,85 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('location_id') ? ' has-error' : '' }}">
-                            <label for="location_id" class="col-md-4 control-label">Location:</label>
+                        
+
+                            <div class="form-group{{ $errors->has('reciever_address') ? ' has-error' : '' }}">
+                            <label for="reciever_address" class="col-md-4 control-label">Reciever Address</label>
+
                             <div class="col-md-6">
-                            <select name="location_id" class="form-control">
-                            <option>Select</option>
+                                <textarea id="reciever_address"  rows="2" type="text" class="form-control" 
+                                name="reciever_address"
+                                 value="{{ old('reciever_address') }}" required autofocus></textarea>
+
+                                @if ($errors->has('reciever_address'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('reciever_address') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('Shipment_fee') ? ' has-error' : '' }}">
+                            <label for="Shipment_fee" class="col-md-4 control-label">Shipment Fee:</label>
+
+                            <div class="col-md-6">
+                                <input id="Shipment_fee"  rows="4" type="text" class="form-control" 
+                                name="shipment_fee"
+                                 value="{{ old('Shipment_fee') }}" required autofocus>
+
+                                @if ($errors->has('Shipment_fee'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('Shipment_fee') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            </div>
+                            <div class="form-group{{ $errors->has('current_location') ? ' has-error' : '' }}">
+                            <label for="current_location" class="col-md-4 control-label">Current_Location:</label>
+
+                            <div class="col-md-6">
+                                <input id="current_location"  rows="4" type="text" class="form-control" 
+                                name="current_location"
+                                 value="{{ old('current_location') }}" required autofocus>
+
+                                @if ($errors->has('current_location'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('current_location') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('sender_name') ? ' has-error' : '' }}">
+                            <label for="firstName" class="col-md-4 control-label">Sender Name</label>
+
+                            <div class="col-md-6">
+                                <input id="sender_name" type="text" class="form-control" name="sender_name"
+                                 value="{{ old('sender_name') }}" required autofocus>
+
+                                @if ($errors->has('sender_title'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('sender_name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('sender_location') ? ' has-error' : '' }}">
+                            <label for="firstName" class="col-md-4 control-label">Sender Location</label>
+
+                            <div class="col-md-6">
+                                <input id="sender_location" type="text" class="form-control" name="sender_location"
+                                 value="{{ old('sender_location') }}" required autofocus>
+
+                                @if ($errors->has('sender_location'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('sender_location') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
                            
-                                    
-                            </select>
-                            @if ($errors->has('location'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('location') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                            </div>
-
-                            <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
-                            <label for="address" class="col-md-4 control-label">Address:</label>
-
-                            <div class="col-md-6">
-                                <textarea id="address"  rows="2" type="text" class="form-control" 
-                                name="address"
-                                 value="{{ old('address') }}" required autofocus></textarea>
-
-                                @if ($errors->has('address'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('address') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                            </div>
-
-                            <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
-                            <label for="description" class="col-md-4 control-label">Description:</label>
-
-                            <div class="col-md-6">
-                                <textarea id="description"  rows="4" type="text" class="form-control" 
-                                name="description"
-                                 value="{{ old('description') }}" required autofocus></textarea>
-
-                                @if ($errors->has('description'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('description') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                            </div>
-
-                            
-
-                            <div class="form-group{{ $errors->has('bedrooms') ? ' has-error' : '' }}">
-                            <label for="title" class="col-md-4 control-label">Bedrooms:</label>
-                            <div class="col-md-6">
-                            <select name="bedroom" class="form-control">
-                                    <option>Select</option>
-                                    <option>1 Bedroom</option>
-                                    <option>2 Bedrooms</option>
-                                    <option>3 Bedrooms</option>
-                                    <option>4 Bedrooms</option>
-                                    <option>5 Bedrooms</option>
-                                    <option>6 Bedrooms</option>
-                                    <option>7 Bedrooms</option>
-                                    <option>8 Bedrooms</option>
-                                    
-                            </select>
-                            @if ($errors->has('bedroom'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('bedroom') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                            </div>
-
-                            <div class="form-group{{ $errors->has('bathrooms') ? ' has-error' : '' }}">
-                            <label for="title" class="col-md-4 control-label">Bathrooms:</label>
-                            <div class="col-md-6">
-                            <select name="bathroom" class="form-control">
-                                    <option>Select</option>
-                                    <option>1 Bathroom</option>
-                                    <option>2 Bathrooms</option>
-                                    <option>3 Bathrooms</option>
-                                    <option>4 Bathrooms</option>
-                                    <option>5 Bathrooms</option>
-                                    <option>6 Bathrooms</option>
-                                    <option>7 Bathrooms</option>
-                                    <option>8 Bathrooms</option>
-                                    
-                            </select>
-                            @if ($errors->has('bathroom'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('bathroom') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                            </div>
-
-                            <div class="form-group{{ $errors->has('Status') ? ' has-error' : '' }}">
-                            <label for="title" class="col-md-4 control-label">Status:</label>
-                            <div class="col-md-6">
-                            <select name="status" class="form-control">
-                                    <option>Select</option>
-                                    <option>For Rent</option>
-                                    <option>For Sale</option>
-                            </select>
-                            @if ($errors->has('status'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('status') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                            </div>
-            
                             <div class="input-group control-group increment" >
           <input type="file" name="filename[]" class="form-control">
           <div class="input-group-btn"> 
@@ -183,7 +170,7 @@
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary" style="margin-top:10px">
-                                    Post Property 
+                                    Upload Parcel 
                                 </button>
                             </div>
                         </div>

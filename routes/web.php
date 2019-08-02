@@ -24,6 +24,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Routs for the Parcel Functionalities
 Route::get('/parcel','ParcelController@get');
-
+Route::post('/addparcel','ParcelController@addParcel');
 
 
