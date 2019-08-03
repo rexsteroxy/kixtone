@@ -32,7 +32,7 @@
 
                                 @if ($errors->has('tracking_id'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('tracking_id') }}</strong>
+                                        <strong>{{ $errors->parcel('tracking_id') }}</strong>
                                     </span>
                                 @endif
                             </div>

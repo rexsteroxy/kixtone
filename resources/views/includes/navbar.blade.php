@@ -16,7 +16,7 @@
                 <nav class="navbar">
                     <div class="container">
                         <div class="navbar-header">
-                            <a href="#home" class="navbar-brand "><img src="img/logo.png" alt="logo"></a>
+                            <a href="#home" class="navbar-brand "><img src="" alt="logo"></a>
                         </div>
                         <div class="search-and-language-bar pull-right ">
                             <ul>
@@ -52,7 +52,9 @@
                         <div class="col-md-10 col-md-offset-1">
                             <div class="welcome-text text-center">
                                 <h1>WE MAKE STRONGEST SERVICE ABOVE THE WORLD</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                               <p class="btn btn-success"> <a href="track">Track Your Package</a></p>
                                 <div class="home-button">
                                     <a href="/services">Our Service</a>
                                     <a href="track">Track Your Package</a>
@@ -68,7 +70,10 @@
                         <div class="col-md-10 col-md-offset-1">
                             <div class="welcome-text text-center">
                                 <h1>WE MAKE STRONGEST SERVICE ABOVE THE WORLD</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                Ut enim ad minim veniam.</p>
+                                <p class="btn btn-success"> <a href="track">Track Your Package</a></p>
                                 <div class="home-button">
                                 <a href="track">Track Your Package</a>
                                 <a href="/services">Our Service</a>

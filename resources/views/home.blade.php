@@ -78,7 +78,7 @@
                     <hr>
                 @endforeach
                 @else
-                <h2>NO POST AVAILABLE</h2>
+                <h2>NO PARCEL AVAILABLE</h2>
 
                 @endif
                 {{$parcels->links()}}
