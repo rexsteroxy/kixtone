@@ -25,5 +25,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Routs for the Parcel Functionalities
 Route::get('/parcel','ParcelController@get');
 Route::post('/addparcel','ParcelController@addParcel');
-
-
+Route::get('/edit/{id}','ParcelController@edit');
+Route::post('/editparcel/{id}','ParcelController@editParcel');
+Route::get('/delete/{id}','ParcelController@delete');
+Route::get('/view/{id}','ParcelController@view');
+Route::post('/search','ParcelController@search');
