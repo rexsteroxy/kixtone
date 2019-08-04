@@ -16,6 +16,7 @@ Route::get('/track', 'PagesController@getTrackPage');
 Route::get('/service', 'PagesController@getServicePage');
 Route::get('/about', 'PagesController@getAboutPage');
 Route::get('/contact', 'PagesController@getContactPage');
+Route::post('/track_id', 'PagesController@getParcel');
 
 
 //Routes for All Registrations and login

@@ -32,7 +32,7 @@
 
                         <div class="input-group">
                                 <input  type="text" class="form-control" name="search"
-                                 placeholder="Search For..." required autofocus>
+                                 placeholder="Search by id..." required autofocus>
                                 <span class="input-group-btn">
                                  <button type="submit" class="btn btn-primary">
                                  Search
