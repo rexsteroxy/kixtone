@@ -17,6 +17,7 @@ class CreateImagesTable extends Migration
             $table->increments('id');
             $table->integer('parcel_id');
             $table->string('images');
+            $table->string('tracking_id');
             $table->timestamps();
         });
     }

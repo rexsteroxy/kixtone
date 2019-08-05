@@ -32,8 +32,9 @@ class PagesController extends Controller
     }
     public function getParcel(Request $request)
     {
-        $keyword = $request->input('tracking_id');
-        $parcels = Parcel::where('tracking_id', '=', $keyword)->get();
-        return view('parcelview',compact('parcels'));
+        $id = $request->input('tracking_id');
+        $parcels = Parcel::where('tracking_id', '=', $id)->get();
+        $images = Image::where('tracking_id', '=', $id)->get();
+        return view('parcelview',compact('parcels','images'));
     }
 }

@@ -85,6 +85,7 @@ public function addParcel(Request $request){
                    $image = new Image;
                    $image->parcel_id = $parcel->id;
                    $image->images = $image_url;
+                   $image->tracking_id = $parcel->tracking_id;
                    $image->save(); 
                }
                
@@ -163,13 +164,12 @@ public function delete($parcel_id){
 //view
 public function view($parcel_id){
     $parcels =Parcel::where('id', '=', $parcel_id)->get();
-    // $parcel = DB::table('parcels')->
-    //      join('images','parcels.id', '=' , 'images.parcel_id')
-    //      ->select('images.*')
-    //      ->where(['images.parcel_id' => $property_id ])
-    //      ->get();
-     
-    return view('parcels.view',compact('parcels'));
+    $images = DB::table('parcels')->
+         join('images','parcels.id', '=' , 'images.parcel_id')
+         ->select('images.*')
+         ->where(['images.parcel_id' => $parcel_id ])
+         ->get();
+    return view('parcels.view',compact('parcels','images'));
     
 } 
 //search
